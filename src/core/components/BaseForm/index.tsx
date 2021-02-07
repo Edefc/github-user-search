@@ -1,14 +1,25 @@
 import React from 'react';
 import './styles.scss';
 
-const BaseForm = () => {
+type Props =  {
+    title: string
+    children: React.ReactNode
+}
+
+const BaseForm = ( {title, children }: Props) => {
 
     return (
         <div className="base-form">
             <h1 className="form-title">
-                Encontre um perfil Github
+                { title }
            </h1>
-           <input type="text"/>
+           { children }
+          <div >
+               <button className="btn btn-primary btn-botton">
+                   Encontrar
+               </button>
+
+           </div>
         </div>
     )
 }
